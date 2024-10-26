@@ -133,7 +133,7 @@ app.get("/activate/:token", async (req, res) => {
         `User with email ${user.email} has been successfully activated.`
       );
       // Redirect to login page with email pre-filled
-      res.redirect(`http://localhost:3000/login?email=${user.email}`);
+      res.redirect(`${process.env.FRONTEND_URL}/login?email=${user.email}`);
     } else {
       console.error("Activation failed: Unable to update user status.");
       res.status(500).send("Activation failed: Unable to update user status.");
