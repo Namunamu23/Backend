@@ -45,7 +45,7 @@ app.post("/register", async (req, res) => {
         pass: process.env.EMAIL_PASS,
       },
     });
-    const activationLink = `http://localhost:5000/activate/${activationToken}`;
+    const activationLink = `https://auth-backend-rwsv.onrender.com/activate/${activationToken}`;
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
